@@ -362,6 +362,10 @@ strong {
   min-width: 0;
 }
 
+.hero-visual {
+  display: none;
+}
+
 .portrait-art,
 .about-frame,
 .approach-visual {
@@ -813,12 +817,53 @@ strong {
   opacity: 0.9;
 }
 
+.whatsapp-float {
+  position: fixed;
+  z-index: 100;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  width: 3.75rem;
+  height: 3.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  box-shadow: 0 0.55rem 1.5rem rgba(62, 47, 41, 0.28);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.whatsapp-float svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+.whatsapp-float:hover {
+  background: #1fbd5b;
+  box-shadow: 0 0.7rem 1.7rem rgba(62, 47, 41, 0.34);
+  transform: translateY(-3px);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.96);
+}
+
 @media (min-width: 44rem) {
   .container {
     width: min(calc(100% - 3rem), var(--container));
   }
 
-  .hero-grid,
+  .whatsapp-float {
+    right: max(1.5rem, env(safe-area-inset-right));
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    width: 4rem;
+    height: 4rem;
+  }
+
   .about-grid,
   .process-grid,
   .faq-grid {
@@ -848,6 +893,10 @@ strong {
 }
 
 @media (min-width: 60rem) {
+  .hero-visual {
+    display: block;
+  }
+
   .possibility-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
